@@ -1,0 +1,88 @@
+/* Reset some default styles for better cross-browser consistency */
+body, table, th, td, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling the entire page */
+body {
+    background-color: #f0f0f0;
+    text-align: left;
+    margin-left: 10px;
+}
+
+/* Container for the to-do list */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+h1 {
+    color: #333;
+}
+
+/* Form for adding a task */
+form {
+    margin-bottom: 20px;
+}
+
+/* Task table */
+table {
+    width: 50%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Table header */
+th {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Table data cells */
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Alternate row background color */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Delete button */
+button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Windows-specific styling */
+@media (window-system: windows) {
+    /* Modify the background color for Windows users */
+    body {
+        background-color: #0078d4; /* Windows blue */
+    }
+
+    /* Modify the table header background color for Windows users */
+    th {
+        background-color: #0078d4; /* Windows blue */
+    }
+
+    /* Modify the delete button color for Windows users */
+    button {
+        background-color: #0078d4; /* Windows blue */
+    }
+}
