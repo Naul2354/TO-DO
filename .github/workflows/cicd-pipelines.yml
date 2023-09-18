@@ -29,6 +29,27 @@ jobs:
       #   with:
       #     name: test-results
       #     path: test-results.xml
+  build-docker:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t naul2354/todo-app-image:$(date '+%Y%m%d%H%M%S') .
+    public-docker:
+    needs: build-docker
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Log into DockerHub
+        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u naul2354 --password-stdin
+
+      - name: Push Docker image
+        run: docker push naul2354/todo-app-image:$(date '+%Y%m%d%H%M%S')
       
 
   # deploy:
